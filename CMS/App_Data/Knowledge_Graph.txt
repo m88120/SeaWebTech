@@ -1,0 +1,35 @@
+<script type="application/ld+json">
+            {
+              "@context" : "http://schema.org",
+              "@type" : "Organization",
+              "name" : "Seawebtech Solutions",
+              "url" : "http://www.seawebtech.com/",
+              "sameAs" : [
+                "https://www.facebook.com/Seawebtech-Solutions-209399899122459/",
+                "https://twitter.com/seawebtech/",
+                "https://plus.google.com/+Seawebtechchandigarh/posts/"
+              ]
+            }
+    </script>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "url" : "http://www.seawebtech.com/",
+  "contactPoint" : [{
+    "@type" : "ContactPoint",
+    "telephone" : "+91172-4600473",
+    "contactType" : "customer service"
+  },
+  {
+    "@type" : "ContactPoint",
+    "telephone" : "+91-9803000357",
+    "contactType" : "customer service"
+  }
+  ]
+  },"availableLanguage" : [
+      "English",
+      "Hindi",
+      "Punjabi"
+    ]
+</script>

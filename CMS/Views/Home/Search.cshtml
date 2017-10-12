@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Seawebtech Search on "+ ViewBag.SearchText;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Header {
+    <title>@ViewBag.Title </title>
+    }
+@using CMS.Models;
+@using System.Xml.Linq;
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">Search</li>
+    </ul>
+    <!-- BEGIN SIDEBAR & CONTENT -->
+    <div class="row margin-bottom-40">
+        <!-- BEGIN CONTENT -->
+        <div class="col-md-12 col-sm-12">
+            <h1>Search result</h1>
+            <div class="content-page">
+                @*@ViewBag.SearchText*@
+                @{
+                    XDocument xdoc1 = XDocument.Load(Server.MapPath("Content/searchData.xml"));
+                    SearchPages objSearchPages = new SearchPages();
+                    List<SearchPages> lstSearchPages
+                       = (from _SearchPages in xdoc1.Element("SearchRoot").Elements("SWTTable")
+                          select new SearchPages
+                          {
+                              name = _SearchPages.Element("name").Value,
+                              url = _SearchPages.Element("url").Value
+                          }).ToList();
+
+                    foreach (var item in lstSearchPages.Where(c => c.name.ToLower().Contains(ViewBag.SearchText.ToLower())))
+                    {
+                        <a href="@item.url">
+                          <b>@item.name</b>
+                         </a>
+                             <br />
+                    }
+
+
+                }
+
+                </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,47 @@
+<script type="application/ld+json">
+            {
+              "@context" : "http://schema.org",
+              "@type" : "Organization",
+              "name" : "Seawebtech Solutions",
+              "legalName" : "Seawebtech Solutions",
+              "url" : "http://www.seawebtech.com/",
+              "telephone": "+91-9803000357",
+              "logo" : "http://www.seawebtech.com/Content/assets/frontend/layout/img/logos/seawebtech_logo.png",
+              "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mohali",
+            "addressRegion": "IN",
+            "postalCode":"160055",
+            "streetAddress": "SCF-52 1st Floor,Phase-2,Mohali (INDIA)"
+            },
+  	
+            "description": "Seawebtech Solutions a leading contract software development company since 2011 with a team of entrepreneurs, marketing experts, developers and designers.",
+			  "potentialAction": {
+				"@type": "SearchAction",
+				"target": "http://www.seawebtech.com/Search?SearchText=={search_term_string}",
+				"query-input": "required name=search_term_string"
+				},
+              "sameAs" : [
+                "https://www.facebook.com/Seawebtech-Solutions-209399899122459/",
+                "https://twitter.com/seawebtech/",
+                "https://plus.google.com/+Seawebtechchandigarh/posts/",
+				"https://www.linkedin.com/company/seawebtech-solutions"
+              ],
+			   "contactPoint" : [{
+    "@type" : "ContactPoint",
+    "telephone" : "+91172-4600473",
+    "contactType" : "customer service"
+  },
+  {
+    "@type" : "ContactPoint",
+    "telephone" : "+91-9803000357",
+    "contactType" : "customer service"
+  }
+  ]
+  },"availableLanguage" : [
+      "English",
+      "Hindi",
+      "Punjabi"
+    ]
+            }
+    </script>

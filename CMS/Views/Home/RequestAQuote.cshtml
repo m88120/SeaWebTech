@@ -1,0 +1,139 @@
+﻿@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc;
+@model CMS.Models.RequestAQuoteModel
+@{
+    ViewBag.Title = "Free IT consultancy and Contact Us For Web,Mobile App Development and Designing Services – Seawebtech Solutions";
+}
+@section Header {
+    <title>@ViewBag.Title </title>
+    <meta name='keywords' content='Free IT consultancy,24*7 service' />
+    <meta name='description' content='Sned your project quote for your website design, Web Development, Mobile App Development and IT services .' />
+}
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">Request A Quote</li>
+    </ul>
+    <div class="row margin-bottom-40">
+        <!-- BEGIN CONTENT -->
+        <div class="col-md-12">
+            <h1>Request A Quote</h1>
+            <div class="content-page">
+                <div class="row">
+
+                    <div class="col-md-9 col-sm-9">
+                        @*<h2>Contact Form</h2>*@
+                        <p>Seawebtech Solutions is always available 24*7 to answer your queries and provide any information you are looking for. Your valuable feedback, suggestions or even complains will help us further improve our services.</p>
+
+                        <!-- BEGIN FORM-->
+                        @using (Html.BeginForm("RequestAQuote", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <div class="form-group">
+                               
+                                <p class="Error"><h1 style="color:red;animation: blinker 1s linear infinite;">@ViewBag.ErrMessage</h1> </p>
+                            </div>
+                            <div class="form-group">
+                                <label for="contacts-name">Name</label>
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Name)
+                            </div>
+                            <div class="form-group">
+                                <label for="contacts-email">Email</label>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email)
+                            </div>
+                            <div class="form-group">
+                                <label for="contacts-email">Phone Number(With Area Code)</label>
+                                @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.PhoneNumber)
+                            </div>
+                            <div class="form-group">
+                                <label for="contacts-name">Project Name</label>
+                                @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Subject)
+                            </div>
+                            <div class="form-group">
+                                <label for="contacts-name">Project Type</label>
+                                @Html.DropDownList("ddProjectType", (IEnumerable<SelectListItem>)ViewBag.ProjectType, new { id = "ddProjectType", @class = "form-control" })
+                            </div>
+                           
+                            <div class="form-group">
+                                <label for="contacts-message">Project Detail</label>
+                                @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Message)
+                            </div>
+                            <div class="form-group">
+                                <label for="contacts-name">Any Project Budget? (Like less than $1000 or No Idea etc)</label>
+                                @Html.TextBoxFor(m => m.ProjectBudget, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.ProjectBudget)
+                            </div>
+                            <div>
+                                <label for="contacts-name">File Upload (.txt,.xlsx,.xls,.docx,.doc,.ppt,.pptx,.pdf)</label>
+                               @Html.TextBox("file", "", new { type = "file" })
+                            </div>
+                            <div class="form-group">
+                                @Html.MathCaptcha()
+                            </div>
+
+                                <button type="submit" class="btn btn-primary"><i class="icon-ok"></i> Send</button>
+                                <button type="button" class="btn btn-default">Cancel</button>
+                                }
+                                <!-- END FORM-->
+                            </div>
+
+                    <div class="col-md-3 col-sm-3 sidebar2">
+                        <h2>Our Contacts</h2>
+                        <address>
+                            <strong> Mohali</strong>(INDIA)<br>
+                            <i class="fa fa-phone"></i> +91-0172-4600473<br />
+                            <i class="fa fa-mobile"></i> +91-9803000357
+                        </address>
+                        <address>
+                            <strong>Email</strong><br>
+                            <a href="mailto:info@seawebtech.com">info@seawebtech.com</a><br>
+                            <a href="mailto:seawebtech@gmail.com">seawebtech@gmail.com</a>
+                        </address>
+                        <ul class="social-icons margin-bottom-40">
+                            <li><a href="https://www.facebook.com/pages/SEAWEBTECHSWT/209399899122459" target="_blank" data-original-title="facebook" class="facebook"></a></li>
+                            <li><a href="https://twitter.com/SEAWEBTECH" data-original-title="twitter" target="_blank" class="twitter"></a></li>
+                            <li><a href="https://plus.google.com/+SEAWEBTECHchandigarh/posts" target="_blank" data-original-title="Goole Plus" class="googleplus"></a></li>
+                            <li><a href="skype:SEAWEBTECH" data-original-title="skype" class="skype"></a></li>
+                            @*<li><a href="#" data-original-title="linkedin" class="linkedin"></a></li>
+                                <li><a href="#" data-original-title="rss" class="rss"></a></li>
+                                  <li><a href="#" data-original-title="github" class="github"></a></li>*@
+                        </ul>
+
+                        <h2 class="padding-top-30">About Us</h2>
+                        <p>Seawebtech Solutions was founded with a team of entrepreneurs, marketing experts, developers and designers with @(DateTime.Now.Year - 2011) years collaborative experience in the IT web solutions industry.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-check"></i>Responsive Web Design</li>
+                            <li><i class="fa fa-check"></i>Web Development </li>
+                            <li><i class="fa fa-check"></i>Mobile App Development</li>
+                            <li><i class="fa fa-check"></i>Internet Marketing</li>
+                            <li><i class="fa fa-check"></i>eCommerce Systems </li>
+                            <li><i class="fa fa-check"></i>Web CMS Hosting & Training</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-12">
+                        <br />
+                        <div id="map" class="gmaps margin-bottom-40" style="height:400px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END CONTENT -->
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+    <script src="~/Content/assets/global/plugins/gmaps/gmaps.js" type="text/javascript"></script>
+    <script src="~/Content/assets/frontend/pages/scripts/contact-us.js" type="text/javascript"></script>
+    <script type="text/javascript">
+       jQuery(document).ready(function () {
+           activemenu('Contact');
+
+        });
+    </script>
+}

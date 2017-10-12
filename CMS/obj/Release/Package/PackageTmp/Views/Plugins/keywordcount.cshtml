@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Plugins";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model KeywordCountModel
+@section Header {
+    <title>@ViewBag.Title </title>
+}
+@using CMS.Models;
+@using System.Xml.Linq;
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li ><a href="/Plugins">Plugins</a></li>
+        <li class="active">Count keyword and description</li>
+    </ul>
+    <!-- BEGIN SIDEBAR & CONTENT -->
+    <div class="row margin-bottom-40">
+        <!-- BEGIN CONTENT -->
+        <div class="col-md-12 col-sm-12">
+            <h1>I hope it will help you</h1>
+            <div class="content-page">
+
+                @using (Html.BeginForm("keywordcount", "Plugins", FormMethod.Post))
+                {
+                    @Html.TextBoxFor(m => m.Url)
+           
+                    <input type="submit" value="Submit" />
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
